@@ -8,7 +8,7 @@
 
 ### 架构图
 
-[Image: Image.jpg]
+![arc](https://github.com/jerrywonggithub/events_exporter_eks/blob/main/capture/arc.png)
 
 ### 创建 Namespace、ServiceAccount、ClusterRolebinding
 
@@ -137,4 +137,5 @@ event-exporter-d88d4f8f4-zh5ng   1/1     Running   0          131m
 
 #### 在 OpenSearch 上检查 index，验证event是否已正常打到 Opensearch
 
-[Image: Image.jpg][Image: Image.jpg]
+![index](https://github.com/jerrywonggithub/events_exporter_eks/blob/main/capture/index.png)
+![discover](https://github.com/jerrywonggithub/events_exporter_eks/blob/main/capture/opensearch.png)
