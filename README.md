@@ -103,7 +103,25 @@ data:
 
 ```
 apiVersion: apps/v1
-
+kind: Deployment
+metadata:
+  name: event-exporter
+  namespace: monitoring
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: event-exporter
+        version: v1
+    spec:
+      serviceAccountName: event-exporter
+      containers:
+        - name: event-exporter
+          image: ghcr.io/opsgenie/kubernetes-event-exporter:v0.11
+          imagePullPolicy: IfNotPresent
+          args:
+            - -conf=/data/config.yaml
           volumeMounts:
             - mountPath: /data
               name: cfg
@@ -115,6 +133,7 @@ apiVersion: apps/v1
     matchLabels:
       app: event-exporter
       version: v1
+
 ```
 
 ### 部署
